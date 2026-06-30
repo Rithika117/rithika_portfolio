@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rithika K — Full Stack & ML Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAF9F6;
+    --ink: #1A1A1A;
+    --grey: #6B6B6B;
+    --line: #E2E0D9;
+    --accent: #2E5BFF;
+    --card-bg: #FFFFFF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 80px 24px 100px; }
+
+  /* HEADER */
+  header { margin-bottom: 64px; }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+  .tagline {
+    font-size: 17px;
+    color: var(--grey);
+    max-width: 540px;
+    margin-bottom: 22px;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+  }
+  .meta-row a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2px;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .meta-row a:hover, .meta-row a:focus-visible { color: var(--accent); border-color: var(--accent); }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--grey);
+    text-transform: lowercase;
+    margin: 56px 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  /* PROJECT CARDS — file-tree styled */
+  .project {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 24px 26px;
+    margin-bottom: 16px;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .project:hover { border-color: var(--accent); transform: translateY(-1px); }
+  .project-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .project-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .project-name::before {
+    content: "/ ";
+    color: var(--accent);
+  }
+  .project-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--grey);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 3px 10px;
+    white-space: nowrap;
+  }
+  .project-desc {
+    font-size: 15px;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .stack-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .stack-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--grey);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 3px 9px;
+    border-radius: 5px;
+  }
+  .project-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .project-link:hover { text-decoration: underline; }
+  .pending-note {
+    font-size: 13px;
+    color: var(--grey);
+    font-style: italic;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 12px 20px;
+    font-size: 14px;
+  }
+  .skills-grid dt {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--grey);
+    font-size: 13px;
+  }
+  .skills-grid dd { color: var(--ink); }
+
+  /* FOOTER */
+  footer {
+    margin-top: 70px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: var(--grey);
+  }
+
+  @media (max-width: 540px) {
+    h1 { font-size: 32px; }
+    .wrap { padding: 56px 20px 70px; }
+    .skills-grid { grid-template-columns: 1fr; gap: 4px 0; }
+    .skills-grid dt { margin-top: 10px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project { transition: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">portfolio / full-stack & ml</div>
+    <h1>Rithika K</h1>
+    <p class="tagline">3rd-year B.Tech student in AI & Data Science, building full-stack web apps and ML models — currently shipping a women's-safety app for a hackathon while looking for short, hands-on internships.</p>
+    <div class="meta-row">
+      <a href="mailto:rithikak117@gmail.com">rithikak117@gmail.com</a>
+      <a href="tel:+917550204058">+91 7550204058</a>
+      <a href="https://github.com/Rithika117" target="_blank" rel="noopener">github.com/Rithika117</a>
+    </div>
+  </header>
+
+  <div class="section-label">full stack projects</div>
+
+  <div class="project">
+    <div class="project-top">
+      <span class="project-name">student-management-system</span>
+      <span class="project-status">complete</span>
+    </div>
+    <p class="project-desc">A web application to manage student records, courses, and attendance — built end to end, from data model to UI.</p>
+    <div class="stack-row">
+      <span class="stack-tag">Python</span>
+      <span class="stack-tag">Flask</span>
+      <span class="stack-tag">SQL</span>
+      <span class="stack-tag">HTML/CSS</span>
+    </div>
+    <p class="pending-note">repo link coming soon — pushing to GitHub</p>
+  </div>
+
+  <div class="project">
+    <div class="project-top">
+      <span class="project-name">todo</span>
+      <span class="project-status">complete</span>
+    </div>
+    <p class="project-desc">A to-do list app with task creation and deletion, built with vanilla JavaScript and DOM manipulation.</p>
+    <div class="stack-row">
+      <span class="stack-tag">HTML</span>
+      <span class="stack-tag">CSS</span>
+      <span class="stack-tag">JavaScript</span>
+    </div>
+    <a class="project-link" href="https://github.com/arjunvision/projects-rithika-k/tree/main/todo" target="_blank" rel="noopener">view code →</a>
+  </div>
+
+  <div class="project">
+    <div class="project-top">
+      <span class="project-name">calculator</span>
+      <span class="project-status">complete</span>
+    </div>
+    <p class="project-desc">A functional calculator with a button-grid UI, supporting basic arithmetic operations.</p>
+    <div class="stack-row">
+      <span class="stack-tag">HTML</span>
+      <span class="stack-tag">CSS</span>
+      <span class="stack-tag">JavaScript</span>
+    </div>
+    <a class="project-link" href="https://github.com/arjunvision/projects-rithika-k/tree/main/weather" target="_blank" rel="noopener">view code →</a>
+  </div>
+
+  <div class="section-label">ml projects</div>
+
+  <div class="project">
+    <div class="project-top">
+      <span class="project-name">titanic-survival-prediction</span>
+      <span class="project-status">complete</span>
+    </div>
+    <p class="project-desc">Classification model predicting passenger survival, with data preprocessing and feature engineering.</p>
+    <div class="stack-row">
+      <span class="stack-tag">Python</span>
+      <span class="stack-tag">scikit-learn</span>
+      <span class="stack-tag">Pandas</span>
+    </div>
+    <p class="pending-note">repo link coming soon — pushing to GitHub</p>
+  </div>
+
+  <div class="project">
+    <div class="project-top">
+      <span class="project-name">sentiment-analysis</span>
+      <span class="project-status">complete</span>
+    </div>
+    <p class="project-desc">Logistic regression model classifying customer reviews as positive or negative.</p>
+    <div class="stack-row">
+      <span class="stack-tag">Python</span>
+      <span class="stack-tag">scikit-learn</span>
+      <span class="stack-tag">NLP</span>
+    </div>
+    <p class="pending-note">repo link coming soon — pushing to GitHub</p>
+  </div>
+
+  <div class="section-label">skills</div>
+  <dl class="skills-grid">
+    <dt>Languages</dt><dd>Python, Java, C, JavaScript, HTML/CSS</dd>
+    <dt>Web</dt><dd>Flask, Streamlit, Java Swing</dd>
+    <dt>ML / Data</dt><dd>scikit-learn, NumPy, Pandas, XGBoost, SQL</dd>
+    <dt>Tools</dt><dd>Git, GitHub, VS Code, Jupyter Notebook</dd>
+    <dt>Core CS</dt><dd>Data Structures, Algorithms, OOP</dd>
+  </dl>
+
+  <footer>
+    rithika k — saveetha engineering college, chennai — class of 2028
+  </footer>
+
+</div>
+</body>
+</html>
